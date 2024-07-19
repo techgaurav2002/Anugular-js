@@ -1,0 +1,66 @@
+<nav class="secondary-sidebar">
+    <div class=" m-b-20 m-l-30 m-r-10 d-sm-none d-md-block d-lg-block d-xl-block">
+      <a href="email_compose.html" class="btn btn-complete btn-block">Compose</a>
+    </div>
+    <p class="menu-title">BROWSE</p>
+    <ul class="main-menu">
+      <li ng-class="isActive('/dashboard')">
+        <a ng-click="redirectToDashboard()">
+          <span class="title"><i class="pg-icon">inbox</i> Dashboard</span>
+          <span class="badge pull-right">5</span>
+        </a>
+      </li>
+      <li ng-class="isActive('/dispatcher')">
+        <a ng-click="redirectToDispatcher()">
+          <span class="title" ng-click=""><i class="pg-icon">inbox_all</i> Dispatcher</span>
+        </a>
+        <ul class="sub-menu no-padding">
+          <li>
+            <a href="#">
+              <span class="title">Important</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="title">Labeled</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li ng-class="isActive('/driver')">
+        <a ng-click="redirectToDriver()">
+          <span class="title"><i class="pg-icon">sent</i> Driver</span>
+        </a>
+      </li>
+      <li ng-class="isActive('/truck')">
+        <a ng-click="redirectToTruck()">
+          <span class="title"><i class="pg-icon">sent</i> Trucks</span>
+        </a>
+      </li>
+      <li ng-class="isActive('/trailer')">
+        <a ng-click="redirectToTrailer()">
+          <span class="title"><i class="pg-icon">spam</i> Trailer</span>
+          <span class="badge pull-right">10</span>
+        </a>
+      </li>
+    </ul>
+    <!-- <p class="menu-title m-t-20 all-caps">Quick view</p> -->
+    <!-- <ul class="sub-menu no-padding">
+      <li>
+        <a href="#">
+          <span class="title">Documents</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="title">Flagged</span>
+          <span class="badge pull-right">5</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="title">Images123</span>
+        </a>
+      </li>
+    </ul> -->
+  </nav>

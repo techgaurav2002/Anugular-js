@@ -1,0 +1,24 @@
+<!-- <div>
+  <h2>Dashboard</h2>
+  <p>Welcome to the Trucking App Dashboard!</p>
+  <span>{{message}}</span>
+</div> -->
+
+<div class="">
+    <div ng-include="'./navbar.html'"></div>
+  <div class="page-content-wrapper full-height">
+    <!-- START PAGE CONTENT -->
+    <div class="content full-height">
+      <!-- START APP -->
+      <!-- START SECONDARY SIDEBAR MENU-->
+      <div ng-include="'./sidenavbar.html'"></div>
+      <!-- END SECONDARY SIDEBAR MENU -->
+      <div class="inner-content full-height ">
+        <h1>Dashboard</h1>
+        <span>{{message}}</span>
+      </div>
+      <!-- END APP -->
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>
+</div>

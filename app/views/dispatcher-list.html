@@ -1,0 +1,140 @@
+
+
+<div class="">
+    <div ng-include="'./navbar.html'"></div>
+  <div class="page-content-wrapper full-height">
+    <!-- START PAGE CONTENT -->
+    <div class="content full-height">
+      <!-- START APP -->
+      <!-- START SECONDARY SIDEBAR MENU-->
+      <div ng-include="'./sidenavbar.html'"></div>
+      <!-- END SECONDARY SIDEBAR MENU -->
+      <div class="inner-content full-height ">
+        <!-- <h1>Dispatcher List</h1>
+        <span>{{message}}</span> -->
+        <div class="card card-transparent">
+          <div class="card-header ">
+            <div class="card-title">Dispatchers List
+            </div>
+            <div class="pull-right">
+              <div class="col-xs-12">
+                <button aria-label="" id="show-modal" class="btn btn-primary btn-cons" ng-click="openAddDispatcherModal()">
+                  <i class="fa fa-plus"></i> Add dispatcher
+                </button>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="card-body">
+            <table class="table table-hover demo-table-dynamic table-responsive-block" id="tableWithDynamicRows">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="dispatcher in dispatchers">
+                  <td class="v-align-middle">
+                    <p>{{dispatcher.name}}</p>
+                  </td>
+                  <td class="v-align-middle">
+                    <p>{{dispatcher.email}}</p>
+                  </td>
+                  <td class="v-align-middle">
+                    <p>{{dispatcher.phone}}</p>
+                  </td>
+                  <td class="v-align-middle">
+                    <!-- <button class="btn btn-primary btn-cons" ng-click="editDispatcher(dispatcher.dispatcher_id)">Edit</button>
+                    <button class="btn btn-danger btn-cons" ng-click="deleteDispatcher(dispatcher.dispatcher_id)">Delete</button> -->
+                    <button class="btn btn-primary" ng-click="openEditDispatcherModal(dispatcher)">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                    <button class="btn btn-danger" ng-click="deleteDispatcher(dispatcher.dispatcher_id)">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- END APP -->
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>
+</div>
+
+<script type="text/ng-template" id="addDispatcherModal.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Add Dispatcher</h3>
+  </div>
+  <div class="modal-body">
+    <form name="dispatcherForm" novalidate>
+      <div class="form-group" ng-class="{ 'has-error': dispatcherForm.name.$touched && dispatcherForm.name.$invalid }">
+        <label>Name:</label>
+        <input type="text" class="form-control" name="name" ng-model="dispatcher.name" required>
+        <div ng-if="dispatcherForm.name.$touched && dispatcherForm.name.$invalid" class="text-danger">
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': dispatcherForm.email.$touched && dispatcherForm.email.$invalid }">
+        <label>Email:</label>
+        <input type="email" class="form-control" name="email" ng-model="dispatcher.email" required>
+        <div ng-if="dispatcherForm.email.$touched && dispatcherForm.email.$invalid" class="text-danger">
+          Valid email is required.
+        </div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': dispatcherForm.phone.$touched && dispatcherForm.phone.$invalid }">
+        <label>Phone:</label>
+        <input type="text" class="form-control" name="phone" ng-model="dispatcher.phone" required>
+        <div ng-if="dispatcherForm.phone.$touched && dispatcherForm.phone.$invalid" class="text-danger">
+          Phone number is required.
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="saveDispatcher(dispatcherForm.$valid)">Save</button>
+    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+  </div>
+</script>
+
+<script type="text/ng-template" id="editDispatcherModal.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Edit Dispatcher</h3>
+  </div>
+  <div class="modal-body">
+    <form name="dispatcherForm" novalidate>
+      <div class="form-group" ng-class="{ 'has-error': dispatcherForm.name.$touched && dispatcherForm.name.$invalid }">
+        <label>Name:</label>
+        <input type="text" class="form-control" name="name" ng-model="dispatcher.name" required>
+        <div ng-if="dispatcherForm.name.$touched && dispatcherForm.name.$invalid" class="text-danger">
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': dispatcherForm.email.$touched && dispatcherForm.email.$invalid }">
+        <label>Email:</label>
+        <input type="email" class="form-control" name="email" ng-model="dispatcher.email" required>
+        <div ng-if="dispatcherForm.email.$touched && dispatcherForm.email.$invalid" class="text-danger">
+          Valid email is required.
+        </div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': dispatcherForm.phone.$touched && dispatcherForm.phone.$invalid }">
+        <label>Phone:</label>
+        <input type="text" class="form-control" name="phone" ng-model="dispatcher.phone" required>
+        <div ng-if="dispatcherForm.phone.$touched && dispatcherForm.phone.$invalid" class="text-danger">
+          Phone number is required.
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="saveDispatcher(dispatcherForm.$valid)">Save</button>
+    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+  </div>
+</script>
+
